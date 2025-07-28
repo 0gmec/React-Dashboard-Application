@@ -1,23 +1,29 @@
+export type TaskStatus ='Pending' | 'In-Progress' | 'Completed' | 'OverDue'
+
 export interface TaskItem {
-    id?: string,
+    id: string,
     taskDescription: string,
     category: string,
-    status: string,
-    dueDate: Date,
+    status: TaskStatus,
+    priority: 'low' | 'medium' | 'high'
+    dueDate: string,
     notes?: string,
 }
 
 export interface TaskItemProps {
     task: TaskItem[],
-    status: "Completed" | "In Progress" | "OverDue",
+    onStatusChange: (taskId: string, newStatus: TaskStatus)=> void
     onDelete?: (taskId: string) => void,
     onEdit?: (taskId: string) => void,
-    onSubmit?: (taskId: string)=> void
+    onSubmit?: (taskId: string)=> void,
 
 }
 
+
+
 export interface TaskListProps extends TaskItemProps{
     onAddTask?: (taskId: TaskItem)=> void
+    
 }
 
 export interface TaskFormData {
@@ -30,7 +36,7 @@ export interface TaskFormData {
 }
 
 export interface TaskFormDataProps {
-
+formData: TaskFormData
 }
 
 export interface TaskFilterData  {
