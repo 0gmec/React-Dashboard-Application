@@ -23,6 +23,7 @@ export interface TaskItemProps {
 
 export interface TaskListProps extends TaskItemProps{
     onAddTask?: (taskId: TaskItem)=> void
+    onSearch?: (taskId: TaskItem)=> void
     
 }
 
@@ -46,5 +47,8 @@ filterStatus?: string,
 }
 
 export interface TaskFilterDataProps {
-    filter: TaskFilterData[]
+    onFilterChange: (filters: {
+        status?: TaskStatus
+        priority?: 'low' | 'medium' | 'high'
+    })=> void
 }
