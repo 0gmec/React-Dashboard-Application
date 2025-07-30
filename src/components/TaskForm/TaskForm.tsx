@@ -2,20 +2,20 @@ import {useState} from "react"
 import type { TaskFormData } from '../../types'
 
 export default function TaskFormData(){
-    const [formData, setFormData] = useState<TaskFormData>({
-        id: '',
-        taskDescription: '',
-        category: '',
-        status: '',
-        dueDate: new Date(),
-        notes: '',
-
-       
-    });
-
-    return (
-        <form>
-            {}
-        </form>
-    );
+    const SubmitForm: React.FC = () => {
+        const [formData, setFormData]= useState<TaskFormData>()
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setFormData(event.target.value),
+    }
+const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    alert(`Submitting formData: ${formData}`),
 }
+return (
+    <form onSubmit={handleSubmit}>
+        
+    </form>
+)
+}
+    }
+ 
