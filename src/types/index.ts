@@ -28,12 +28,12 @@ export interface TaskListProps extends TaskItemProps{
 }
 
 export interface TaskFormData {
-    id?: string,
-    taskDescription: string,
-    category: string,
-    status: string,
-    dueDate: string,
-    notes?: string,
+    id: 1,
+    taskDescription: "SBA-9",
+    category: "School",
+    status: "Completed",
+    dueDate: "2025-07-30",
+    notes?: "",
 }
 
 export interface TaskFormDataProps {
