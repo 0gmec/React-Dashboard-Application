@@ -2,7 +2,7 @@ import type { TaskListProps } from "../../types";
 import type { TaskItem } from "../../types";
 import { useState } from "react";
 
-export default function TaskListProps({}: TaskListProps) {
+export default function TaskList({}) {
    
     
     const [search, setSearch]= useState<string>("")
