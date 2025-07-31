@@ -77,7 +77,7 @@ if (!formData.dueDate) [
                 </div>
                 <div>
                     <label htmlFor="">Due Date</label>
-                    <input type="text" name="Date" value={formData.dueDate}
+                    <input type="date" name="Date" value={formData.dueDate}
                         onChange={handleChange}
                     />
 

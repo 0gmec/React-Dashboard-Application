@@ -6,8 +6,8 @@ export default function TaskListProps({}: TaskListProps) {
    
     
     const [search, setSearch]= useState<string>("")
-    const [filteredTasks, setFilteredTasks] = useState<TaskItem[]>([])
- {filteredTasks.map((task)=>(
+    const [sortedTasks, setSortedTasks] = useState<TaskItem[]>([])
+ {sortedTasks.map((task)=>(
                 <li key={task.id}>{task.taskDescription}</li>
             ))}
 
