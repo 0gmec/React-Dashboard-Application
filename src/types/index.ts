@@ -32,7 +32,7 @@ export interface TaskFormData {
     taskDescription: string,
     category: string,
     status: string,
-    dueDate: Date,
+    dueDate: string,
     notes?: string,
 }
 

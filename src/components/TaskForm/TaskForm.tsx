@@ -10,7 +10,7 @@ export default function TaskFormData() {
             taskDescription: "",
             category: "",
             status: "",
-            dueDate: new Date,
+            dueDate: "",
             notes: ""
         })
         const [error, setError] = useState<{ [key: string]: string }>({})
@@ -45,43 +45,46 @@ if (!formData.status) {
 
 if (!formData.dueDate) [
     formDataIsValid = false
-    errors["dueDate"] = "Must apply date"
+   
 ]
 
-    return { formDataIsValid, errors };
+    setError(errors)
+     return formDataIsValid
 }
 
         const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
             event.preventDefault()
+            const formDataIsValid = handleValidation()
+            if (formDataIsValid)
             alert(`Submitting formData: ${formData}`);
 }
         return (
             <form name="taskForm" onSubmit={handleSubmit}>
                 <label htmlFor="">Task Description</label>
-                <input type="text" name="taskDescription" value={formData.taskDescription.toString()}
+                <input type="text" name="taskDescription" value={formData.taskDescription}
                     onChange={handleChange} />
                 <div>
                     <label htmlFor="">Category</label>
-                    <input type="text" name="category" value={formData.category.toString()}
+                    <input type="text" name="category" value={formData.category}
                         onChange={handleChange}
                     />
                 </div>
                 <div>
                     <label htmlFor="">Status</label>
-                    <label type="text" name="status" value={formData.status.toString()}
+                    <input type="text" name="status" value={formData.status}
                         onChange={handleChange}
                     />
                 </div>
                 <div>
                     <label htmlFor="">Due Date</label>
-                    <input type="text" name="dueDate" value={formData.dueDate.toString()}
+                    <input type="text" name="Date" value={formData.dueDate}
                         onChange={handleChange}
                     />
 
                 </div>
                 <div>
                     <label htmlFor="">Notes</label>
-                    <input type="text" name="notes" value={formData.notes?.toString()}
+                    <input type="text" name="notes" value={formData.notes}
                         onChange={handleChange}
                     />
                 </div>
